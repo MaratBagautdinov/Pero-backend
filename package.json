@@ -34,7 +34,6 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/passport-jwt": "^3.0.8",
-    "colors": "^1.4.0",
     "nodemon": "^2.0.20"
   }
 }
