@@ -1,5 +1,4 @@
 import express from 'express'
-import morgan from 'morgan'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import cors from 'cors'
@@ -16,7 +15,6 @@ mongoose
 	.catch(err => console.log(`Error: ${err.message}`.red.underline.bold))
 const app = express()
 
-process.env.NODE_ENV === 'dev' && app.use(morgan('dev'))
 
 app.use(express.json())
 
