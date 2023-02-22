@@ -21,7 +21,7 @@ app.use(cors())
 
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postsRoutes)
-app.use('/api/uploads', express.static('uploads'))
+app.use('/api/uploads', express.static('tmp'))
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () =>
