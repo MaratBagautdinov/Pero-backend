@@ -12,8 +12,6 @@
     "server": "nodemon server"
   },
   "dependencies": {
-    "@nestjs/passport": "^9.0.3",
-    "@types/multer": "^1.4.7",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
@@ -32,6 +30,8 @@
     "passport-jwt": "^4.0.1"
   },
   "devDependencies": {
+    "@nestjs/passport": "^9.0.3",
+    "@types/multer": "^1.4.7",
     "@types/bcryptjs": "^2.4.2",
     "@types/passport-jwt": "^3.0.8",
     "nodemon": "^2.0.20"

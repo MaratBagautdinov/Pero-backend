@@ -5,7 +5,6 @@
 import Posts from '../../models/postsModel.js'
 import asyncHandler from 'express-async-handler'
 import User from '../../models/userModel.js'
-
 export const createPost = asyncHandler(async (req, res) => {
 	let postOwn = req.userID
 	const { content } = req.body
@@ -14,8 +13,8 @@ export const createPost = asyncHandler(async (req, res) => {
 		postOwn,
 		content,
 		date: {
-			time: date.toLocaleTimeString().slice(0, -3),
-			day: date.toLocaleDateString()
+			time: date.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit'}),
+			day: date.toLocaleDateString('ru-RU')
 		}
 	})
 	const user = await User.findById(postOwn)

@@ -1,7 +1,6 @@
 import User from '../../models/userModel.js'
 import { GenToken } from '../../helpers/generateToken.js'
 import asyncHandler from 'express-async-handler'
-import { Error } from 'mongoose'
 import bcrypt from 'bcryptjs'
 
 export const registerUser = asyncHandler(async (req, res) => {

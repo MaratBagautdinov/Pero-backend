@@ -26,16 +26,19 @@ const userSchema = mongoose.Schema(
 		},
 		birthday: {
 			type: String,
-			required: true
+			required: false,
+			default: ''
 		},
 		location: {
 			country: {
 				type: String,
-				required: true
+				required: false,
+				default: ''
 			},
 			city: {
 				type: String,
-				required: true
+				required: false,
+				default: ''
 			}
 		},
 		images: {
