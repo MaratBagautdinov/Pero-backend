@@ -7,6 +7,6 @@ const storage = multer.diskStorage({
 		!fs.existsSync(path) && fs.mkdirSync(path)
 		cb(null, path)
 	},
-	filename: (req, file, cb) => cb(null, Math.trunc(Date.now() / 1000) + file.originalname)
+	filename: (req, file, cb) => cb(null, Math.trunc(Date.now() / 10000) + file.originalname)
 })
 export default multer({ storage })
