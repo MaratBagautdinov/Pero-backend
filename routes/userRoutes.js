@@ -16,7 +16,7 @@ router.route('/:id').get(protectAuth, getUser)
 router.route('/update').put(protectAuth, updateData)
 router
 	.route('/updateLogo')
-	.post(protectAuth, UploadMulter, updateLogo)
+	.post(protectAuth, updateLogo)
 router.route('/add-friend/:id').put(protectAuth, AddFriend)
 router.route('/auth/login').post(loginUser)
 router
