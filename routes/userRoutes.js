@@ -6,7 +6,6 @@ import { protectAuth, validatorRegister } from '../middleware/authMiddleware.js'
 import { errorHandler } from '../middleware/errorMiddleware.js'
 import { updateData } from '../controllers/user/updateData.js'
 import { AddFriend } from '../controllers/user/addFriend.js'
-import UploadMulter from '../middleware/UploadMulter.js'
 import updateLogo from '../controllers/user/updateLogo.js'
 
 const router = express.Router()
