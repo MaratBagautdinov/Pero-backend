@@ -1,24 +1,19 @@
-import multer from 'multer'
-import fs from 'fs'
 import SDK from 'easy-yandex-s3'
-const s3 = new SDK({
+const s3 = new SDK.default({
 	auth:{
-		accessKeyId: process.env.S3_ID,
-		secretAccessKey: process.env.S3_KEY
+		accessKeyId: "YCAJELfpnjHhYYsZZ-PUu4WgS",
+		secretAccessKey: "YCPrdH_sPke0Ig_l3SQnqHbnR-l2hkdS9nmzAEZs"
 	},
 	Bucket: "pero-social-network",
-	debug: false
+	debug: true
 })
 
-const upload = async()=>{
-	await s3.U
+export default async (req, res, next) => {
+	let buffer = req.files[0].buffer
+	await s3.Upload({ buffer }, '/logos/')
+		.then(data=> {
+			req.name = data.Location
+			next()
+		})
+		.catch(err=>console.log(`Error: ${err}`))
 }
-const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		const path = 'tmp'
-		!fs.existsSync(path) && fs.mkdirSync(path)
-		cb(null, path)
-	},
-	filename: (req, file, cb) => cb(null, Math.trunc(Date.now() / 10000) + file.originalname)
-})
-export default multer({ storage })

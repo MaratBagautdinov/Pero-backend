@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 // Routes
 import userRoutes from './routes/userRoutes.js'
 import postsRoutes from './routes/postsRoutes.js'
+import multer from "multer";
 
 dotenv.config()
 
@@ -18,7 +19,7 @@ const app = express()
 app.use(express.json())
 
 app.use(cors())
-
+app.use(multer().any());
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postsRoutes)
 app.use('/api/uploads', express.static('tmp'))
