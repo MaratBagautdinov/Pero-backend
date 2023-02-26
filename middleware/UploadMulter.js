@@ -5,7 +5,7 @@ const s3 = new SDK.default({
 		secretAccessKey: "YCPrdH_sPke0Ig_l3SQnqHbnR-l2hkdS9nmzAEZs"
 	},
 	Bucket: "pero-social-network",
-	debug: true
+	debug: false
 })
 
 export default async (req, res, next) => {
